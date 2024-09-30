@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+int main() {
+	char choice = 'm';
+	while (choice != 'q') {
+		cout << "press any key, q to quit" << endl;
+		cin >> choice;
+		cout << "you typed " << choice << endl;
+	}
+}
