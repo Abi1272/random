@@ -30,8 +30,8 @@ subtitle_text = font_subtitle.render("Famous for its rich history, traditions, f
 fact1 = font_text.render("Mexico is known for their famous dishes,", True, WHITE)
 fact2 = font_text.render("and cultural contributions. Moreover, has influeced all areas of American life", True, WHITE)
 fact3 = font_text.render("Includes of many traditions like", True, WHITE)
-fact4 = font_text.render("dia de los muertos, cinco de mayo and many more. Mexico, has unique fashion", True, WHITE)
-fact5 = font_text.render("history and modernity, with sights such as the Tower of London.", True, WHITE)
+fact4 = font_text.render("dia de los muertos, cinco de mayo and many more. Mexico, has unique tradition fashion such as", True, WHITE)
+fact5 = font_text.render(" colorful flowy dresses know as many names like Jalisco dress, Huipil and more, used for dances.", True, WHITE)
 
 pygame.mixer.music.load("gb.mp3")
 pygame.mixer.music.play(-1)
