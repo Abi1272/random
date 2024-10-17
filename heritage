@@ -2,24 +2,25 @@ import pygame
 
 pygame.init()
 
-screen_width, screen_height = 1000, 600
+screen_width, screen_height = 1170, 600
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Great Britain Poster")
+pygame.display.set_caption("Mexico Poster")
 
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+WHITE = (255, 0, 0)
+RED = (73, 156, 68)
+BLUE = (255, 255, 255)
 
-mexico_flag = pygame.image.load('mexico.jpeg')
-mexico_flag = pygame.transform.scale(mexico, (200, 120))
+mexico_flag = pygame.image.load('mexico.jpg')
+mexico_flag = pygame.transform.scale(mexico_flag, (230, 150))
 
-muertos_image = pygame.image.load('muertos.jpeg')
+muertos_image = pygame.image.load('muertos.jpg')
+muertos_image = pygame.transform.scale(muertos_image, (200, 150))
 
-food_image = pygame.image.load('food.jpeg')
-food_image = pygame.transform.scale(food_image, (200, 200))
+food_image = pygame.image.load('food_image.jpg')
+food_image = pygame.transform.scale(food_image, (200, 150))
 
-clothes_image = pygame.image.load('clothes.jpeg')
-clothes_image = pygame.transform.scale(clothes_image, (200, 200))
+clothes_image = pygame.image.load('clothes.jpg')
+clothes_image = pygame.transform.scale(clothes_image, (200, 150))
 
 font_title = pygame.font.Font(None, 80)
 font_subtitle = pygame.font.Font(None, 40)
@@ -27,13 +28,13 @@ font_text = pygame.font.Font(None, 30)
 
 title_text = font_title.render("Welcome to Mexico", True, RED)
 subtitle_text = font_subtitle.render("Famous for its rich history, traditions, food and culture", True, BLUE)
-fact1 = font_text.render("Mexico is known for their famous dishes,", True, WHITE)
-fact2 = font_text.render("and cultural contributions. Moreover, has influeced all areas of American life", True, WHITE)
-fact3 = font_text.render("Includes of many traditions like", True, WHITE)
-fact4 = font_text.render("dia de los muertos, cinco de mayo and many more. Mexico, has unique tradition fashion such as", True, WHITE)
-fact5 = font_text.render(" colorful flowy dresses know as many names like Jalisco dress, Huipil and more, used for dances.", True, WHITE)
+fact1 = font_text.render("Mexico is known for their famous dishes and cultural contributions.", True, WHITE)
+fact2 = font_text.render(" Moreover, has influeced all areas of American life", True, WHITE)
+fact3 = font_text.render("Includes of many traditions like dia de los muertos, cinco de mayo and many more.", True, WHITE)
+fact4 = font_text.render("Mexico, has unique tradition fashion such as colorful flowy dresses", True, WHITE)
+fact5 = font_text.render("know as many names like Jalisco dress, Huipil and more, used for dances.", True, WHITE)
 
-pygame.mixer.music.load("gb.mp3")
+pygame.mixer.music.load("mx.mp3")
 pygame.mixer.music.play(-1)
 
 running = True
