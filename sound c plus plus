@@ -1,0 +1,25 @@
+#include<iostream>
+#include<Windows.h> // look! a new libary
+using namespace std;
+int main() {
+	int num = 500; //variable to run our while loop
+
+	//call the window title function
+	SetConsoleTitleA("My Awsome Game!");
+
+	while (num > 0) {
+		int num = rand() % 2000 + 200;
+		//call the console color function
+		Beep(num, 100);
+
+		//a new color!
+
+		//call thee messagebox function
+		//MessageBox(nullptr, TEXT("Python is awsome :D!!"), TEXT("C++ Rules."), MB_OK);
+		cout << "yay C++ >>>python" << endl;
+		//system("pause");
+		num--; //decrease loop counter (so its not infinite)
+
+	}//end of while loop
+
+}//end of main
