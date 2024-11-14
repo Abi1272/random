@@ -1,0 +1,56 @@
+#creatign a line
+gross_items = ["moldy sandwich", "stinky sock", "half eaten banana", " mystery goo", "cottage cheese", "blood"]
+
+#get first and last item in list
+first_item = gross_items[0]
+last_item = gross_items[-1]
+print("the first item is a", first_item, "and the last item is", last_item + ".")
+
+#slic the list: copy a protion of it into another list
+show_and_smell_items = gross_items[1:3]
+partners_lunch = gross_items[2:5]
+print("the items coming for 'show and smell' are:", show_and_smell_items)
+print("the items in partners' lunch are:", partners_lunch)
+
+#swap a list item
+gross_items[2] = "rotten apple" 
+gross_items[5] = "skibidi slicers"
+print("updated gross items:", gross_items)
+
+
+#add elements
+gross_items.append("mystery slime")
+gross_items.insert(0, "sticky bandage")
+print("list after adding items:",gross_items)
+
+#remove elements
+gross_items.remove("stinky sock")
+gross_items.remove("skibidi slicers")
+slithering_item = gross_items.pop()
+print("after some items left:", gross_items)
+print("The slithering item was a " + slithering_item)
+
+#print list lenght
+number_of_items = len(gross_items)
+print("We now have", number_of_items, "gross items.")
+
+#check if item is in list
+has_mystery_goo = "mystery goo" in gross_items
+print("Do we still have mystery goo?")
+if has_mystery_goo == True:
+    print("Yes!")
+else:
+    print("no")
+    
+has_rotten_apple = "rotten apple" in gross_items
+print("Do we still have rotten apple?")
+if has_rotten_apple == True:
+    print("Yes!")
+else:
+    print("no")
+    
+#loop through list
+for item in gross_items:
+    print("behold the incredibly gross", item, "!")
+
+
