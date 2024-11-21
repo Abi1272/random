@@ -63,6 +63,10 @@ while running:
                 current_color = PINK  # Change to purple
             elif event.key == pygame.K_m:
                 current_color = MORADO  # Change to purple
+            elif event.key == pygame.K_w:
+                current_color = WHITE  # Change to white
+            elif event.key == pygame.K_l:
+                current_color = BLACK  # Change to black
 
         # Check for mouse click
         elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -117,7 +121,7 @@ while running:
            
 
     # Display instructions at the top
-    instructions = font.render("1: Ellipse  2: Hexagon  3: Triangle 4: Rectangle 5: Circle |  R: Red  G: Green  B: Brown O: Orange Y: Yellow P: Pink M: Morado", True, BLACK)
+    instructions = font.render("1: Ellipse  2: Hexagon  3: Triangle 4: Rectangle 5: Circle |  R: Red  G: Green  B: Brown O: Orange Y: Yellow P: Pink M: Morado W: White L: Black", True, BLACK)
     screen.blit(instructions, (10, 10))
 
     # Update the screen
