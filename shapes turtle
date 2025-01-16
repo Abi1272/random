@@ -1,0 +1,72 @@
+import turtle
+screen = turtle.Screen()
+screen.bgcolor("pink") 
+donatello = turtle.Turtle() #donatello is mo's favorite TMNT
+
+def square(x, y):
+    donatello.pensize(5)
+    donatello.pencolor("medium purple")
+    donatello.penup()
+    donatello.goto(x, y)
+    donatello.pendown()
+    for i in range(4): 
+        donatello.forward(150) 
+        donatello.right(90)
+
+def circle(cx, cy, radius):
+    donatello.pensize(8)
+    donatello.pencolor("orange")
+    donatello.fillcolor("yellow")
+    donatello.penup()
+    donatello.goto(cx, cy)
+    donatello.pendown()
+    donatello.begin_fill()
+    donatello.circle(radius)
+    donatello.end_fill()
+    
+def triangle(tx, ty):
+    donatello.pensize(5)
+    donatello.pencolor("violet")
+    donatello.penup()
+    donatello.goto(tx, ty)
+    donatello.pendown()
+    for i in range(3): 
+        donatello.forward(155) 
+        donatello.right(-120)
+        
+def hexagon(hx, hy):
+    donatello.pensize(5)
+    donatello.pencolor("deep pink")
+    donatello.penup()
+    donatello.goto(hx, hy)
+    donatello.pendown()
+    for i in range(6): 
+        donatello.forward(50) 
+        donatello.right(60)
+        
+def star(sx, sy):
+    donatello.pensize(5)
+    donatello.pencolor("royal blue")
+    donatello.penup()
+    donatello.goto(sx, sy)
+    donatello.pendown()
+    for i in range(5): 
+        donatello.forward(80) 
+        donatello.right(144)
+        
+
+    
+
+    
+#call functions
+square(30, 40)
+triangle(30, 45,)
+circle(-200, 150, 80)
+hexagon(80, 10)
+star(-80, 150)
+star(-360, 100)
+star(-400, 180)
+star(130, 300)
+star(200, 200)
+
+turtle.done() 
