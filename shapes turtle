@@ -68,5 +68,6 @@ star(-360, 100)
 star(-400, 180)
 star(130, 300)
 star(200, 200)
+star(400, 370)
 
 turtle.done() 
