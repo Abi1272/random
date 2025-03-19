@@ -1,0 +1,102 @@
+import pygame
+import random
+import time
+pygame.init()
+
+pygame.mixer.music.load('bubbling2.wav') 
+sound_effect = pygame.mixer.Sound('bubbling2.wav')  
+
+pygame.mixer.music.play(1)  # The '-1' argument makes the music loop indefinitely
+
+
+
+
+
+screen = pygame.display.set_mode((800, 600)) #game window
+pygame.display.set_caption("Fish Tank") #game window title
+clock = pygame.time.Clock() #handles FPS
+font = pygame.font.Font(None, 36) #Font for displaying the score
+font2 = pygame.font.Font(None, 72) #larger font
+
+
+clock = pygame.time.Clock() #handles FPS
+
+background_image = pygame.image.load('Fish Tank background.png').convert_alpha()
+bubbles_image = pygame.image.load('bubbles.png').convert_alpha()
+spawn_bubble = 0
+
+#Bubbles class
+class Bubbles:
+    def __init__(self, y):
+        self.y = y
+        self.x = random.randint(50, 700)
+        self.top_bubbles = pygame.transform.flip(bubbles_image, False, True)
+
+        
+    def move(self):
+        self.y -= 4 #Move pipes to the left
+        #print("moving bubbles")
+        self.x += random.randint(-2, 2)
+    def draw(self):        
+        screen.blit(self.top_bubbles, (self.x, self.y))
+        
+
+bubbles = []
+spawn_bubbles = 0 #timer for pipe spawn
+
+ticker = 0
+
+running = True
+while running: #Game loop===========================================
+    clock.tick(60)
+    ticker+=1 #increment score
+    if ticker%10 == 0:
+        ticker = 0 #reset timer
+    
+    
+    spawn_bubble += 1 #increment timer
+    if spawn_bubble >= 100: #pipe is spawned every 150 frames
+        bubbles.append(Bubbles(800)) #this INSTANTIATES a new pipe and puts it in the list!
+        spawn_bubble = 0 #reset timer
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            sound_effect.play()
+        
+        
+ #spaw pipes
+    #move pipes!
+    for bubble in bubbles: #walk through list of pipe
+        bubble.move() #move each pipe
+        
+        
+    #destroy pipes that have gone off screen
+    i = len(bubbles) - 1 #start at end of list
+    while i >= 0:
+        if bubbles[i].y <= -50: #check if pipes is off screen
+            bubbles.pop(i) #remove from list
+        i -= 1 #this increments the while loop
+
+
+        
+
+    
+    
+    
+    #render section----------------------------------------
+    
+  
+    
+   
+    screen.blit(background_image, (0, 0))
+    for bubble in bubbles:
+         bubble.draw()
+    
+    pygame.display.flip()
+    
+    
+#---end of game loop-------------------------
+pygame.display.flip()
+pygame.time.delay(2000) #delay in milliseconds
+pygame.quit()
